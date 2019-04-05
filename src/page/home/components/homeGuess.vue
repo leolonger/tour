@@ -29,9 +29,13 @@
 <script>
 export default {
   name: 'homeGuess',
+  props:{
+    guessList:Array
+  },
   data(){
     return{
-      guessDescChange:'',
+      guessDescChange:''
+      /*,
       guessList:[
       {
         id:'2001',
@@ -72,7 +76,7 @@ export default {
         desc:'常州明都枫泽山庄大酒店1晚，自选淹城野生动物园景点/常州明都枫泽山庄大酒店自助晚餐套餐',
         distance:'酒店距景点13.3km',
         prise:'299'
-      }]
+      }]*/
     }
   },
   methods:{

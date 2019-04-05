@@ -9,7 +9,7 @@
     <div class="week-swiper">
       <swiper :options="swiperOption">
         <swiper-slide 
-          v-for="item of weekendSwiper"
+          v-for="item of weekendList"
           :key="item.id"
         >
           <div class="weekSwiper-item">
@@ -30,14 +30,17 @@
 <script>
 export default {
   name: 'homeWeekend',
+  props:{
+    weekendList:Array
+  },
   data(){
     return {
       swiperOption:{
         freeMode:true,
         spaceBetween:23,
         slidesPerView:3
-      },
-      weekendSwiper:[
+      }/*,
+      weekendList:[
       {
         id:'1001',
         imgUrl:'https://pic5.40017.cn/01/000/7d/46/rBLkBlmJHzeAecWoAADLTfHpefI910_280x190_00.jpg',
@@ -67,7 +70,7 @@ export default {
         imgUrl:'https://pic5.40017.cn/02/000/f8/b9/rBLkCFsWfOSAKWiGAABRaPAf0aA516_280x190_00.jpg',
         desc:'天目湖',
         detail:'竹海 山水 温泉 古街'
-      }]
+      }]*/
     }
   }
  }

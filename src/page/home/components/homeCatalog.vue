@@ -16,13 +16,16 @@
 <script>
 export default {
   name: 'homeCatalog',
+  props:{
+    iconList:Array
+  },
   data(){
     return {
       blue:'blue',
       orange:'orange',
       green:'green',
       red:'red',
-      iconList:[
+      /*iconList:[
         {
           id:'00001',
           imgUrl:'https://pic5.40017.cn/02/001/6d/e2/rBLkCFmEG8eALBI8AAAEA1xXmqI793.png',
@@ -47,7 +50,7 @@ export default {
           desc:'宜兴竹管',
           color:'red'
         }
-      ]
+      ]*/
     }
   }
  }

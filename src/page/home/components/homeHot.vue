@@ -9,7 +9,7 @@
       </div>
        <div 
          class="left-content"
-         v-for="item of contentList"
+         v-for="item of hotContentList"
          :key="item.id"
         >
          <div class="content-img">
@@ -43,9 +43,14 @@
 <script>
 export default {
   name: 'homeHot',
+  props: {
+    hotPriseList:Array,
+    hotTrendList:Array,
+    hotContentList:Array
+  },
   data() {
     return {
-      contentList:[
+      /*hotContentList:[
       {
         id:'000001',
         imgUrl:'https://pic3.40017.cn/zzy/rimage/2016/01/25/15/W0D7Jf_100x100_00.jpg',
@@ -69,7 +74,7 @@ export default {
         desc:'快乐寒假',
         crite:'亲子旅行记',
         imgUrl:'https://pic5.40017.cn/03/000/da/e4/rB5oQFwcf9GAM_o-AACKptfbYxE196_100x100_00.png'
-      }]
+      }]*/
     }
   }
  }

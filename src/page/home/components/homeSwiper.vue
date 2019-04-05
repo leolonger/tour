@@ -17,9 +17,12 @@
 <script>
 export default {
   name: 'homeSwiper',
+  props:{
+    swiperList:Array
+  },
   data(){
     return {
-      swiperList:[
+      /*swiperList:[
       {
         id:'001',
         imgUrl:'https://pic5.40017.cn/01/000/31/71/rBANC1sy7-iAaElXAADxiWL4LPo263_520x218_00.jpg'
@@ -32,7 +35,7 @@ export default {
         id:'003',
         imgUrl:'https://pic5.40017.cn/03/000/74/c0/rBANB1yA6KqAN_r4AAMb_cFjfB4749_520x218_00.jpg'
        }
-      ],
+      ],*/
       // 分页
       swiperOption:{
         pagination:'.swiper-pagination',

@@ -7,7 +7,7 @@
   	  <span class="iconfont">&#xe7b7;</span>上海海昌海洋公园
   	</div>
   	<div class="header-city" :class="[showCity]">
-  	北京
+  	{{this.city}}
   	<span class="iconfont">&#xe651;</span></div>
   </div>
 </template>
@@ -15,6 +15,7 @@
 <script>
 export default {
   name: 'homeHeader',
+  props:['city'],
   methods:{
     scrollChange(){
       let height = document.documentElement.scrollTop;
