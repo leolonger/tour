@@ -6,9 +6,11 @@
   	<div class="header-search" :class="[showSearch]">
   	  <span class="iconfont">&#xe7b7;</span>上海海昌海洋公园
   	</div>
+    <router-link to="/location">
   	<div class="header-city" :class="[showCity]">
   	{{this.city}}
   	<span class="iconfont">&#xe651;</span></div>
+    </router-link>
   </div>
 </template>
 
