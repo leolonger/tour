@@ -2,7 +2,7 @@
   <div class="list" ref="wrapper">
     <div> 
       <div class="present-area">
-        <div class="present-title">当前</div>
+        <div class="present-title" ref="present">当前</div>
         <div class="present-button">{{this.city}}</div>
       </div>
       <div class="hot-area">
@@ -20,7 +20,9 @@
         <div 
           class="alph-wrapper"
           v-for="(item,key) of cities"
-          :key="key">
+          :key="key"
+          :ref="key"
+        >
           <div class="alph-title">{{key}}</div>
           <div class="alph-list">
             <div 
@@ -41,6 +43,22 @@ import BScroll from 'better-scroll'
 import BMap from 'BMap'
 export default {
   name: 'locationList',
+  props:{
+    letter:String
+  },
+  watch:{
+    letter(){
+      // console.log(this.letter)
+      const elementLetter = this.$refs[this.letter];
+      const elementPresent = this.$refs.present;
+      if(elementLetter){
+        const element = elementLetter[0];
+        this.scroll.scrollToElement(element);
+      } else{
+         this.scroll.scrollToElement(elementPresent);
+      }
+    }
+  },
   data(){
     return {
       city:'',
@@ -84,6 +102,22 @@ export default {
             id:'4004',
             name:'安庆'
           },
+          {
+            id:'4005',
+            name:'安庆'
+          },
+          {
+            id:'4006',
+            name:'安庆'
+          },
+          {
+            id:'4007',
+            name:'安庆'
+          },
+          {
+            id:'4008',
+            name:'安庆'
+          }
         ],
         "B":[
           {
@@ -107,7 +141,7 @@ export default {
     }
   },
   mounted(){
-    const scroll = new BScroll(this.$refs.wrapper,{
+    this.scroll = new BScroll(this.$refs.wrapper,{
       click:true,
       mouseWheel:{
         speed:20,
