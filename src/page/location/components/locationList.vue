@@ -44,7 +44,9 @@ import BMap from 'BMap'
 export default {
   name: 'locationList',
   props:{
-    letter:String
+    letter:String,
+    cities:Object,
+    hotCities:Array
   },
   watch:{
     letter(){
@@ -61,7 +63,7 @@ export default {
   },
   data(){
     return {
-      city:'',
+      city:''/*,
       hotCities:[
         {
           id:'3001',
@@ -137,7 +139,7 @@ export default {
             name:'安庆'
           },
         ]
-      }
+      }*/
     }
   },
   mounted(){

@@ -22,12 +22,15 @@
 <script>
 export default {
   name: 'locationAlphabet',
+  props:{
+    alphabetList:Array
+  },
   data(){
     return {
       content:'',
       hidden:{
         display:'none'
-      },
+      }/*,
       alphabetList:[
         {
           id:'50011',
@@ -49,7 +52,7 @@ export default {
           id:'50015',
           content:'C'
         },
-      ]
+      ]*/
     }
   },
   methods:{

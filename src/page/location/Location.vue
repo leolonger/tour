@@ -1,12 +1,22 @@
 <template>
   <div>
   	<location-header></location-header>
-  	<location-list :letter="letter"></location-list>
-  	<location-alphabet @change="handleLetterChange"></location-alphabet>
+  	<location-list 
+      :letter="letter"
+      :cities="cities"
+      :hotCities="hotCities"
+    >  
+    </location-list>
+  	<location-alphabet 
+      @change="handleLetterChange"
+      :alphabetList="alphabetList"
+    >
+    </location-alphabet>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import locationHeader from './components/locationHeader.vue'
 import locationList from './components/locationList.vue'
 import locationAlphabet from './components/locationAlphabet.vue'
@@ -19,13 +29,32 @@ export default {
   },
   data(){
     return {
-      letter:''
+      letter:'',
+      cities:{},
+      hotCities:[],
+      alphabetList:[]
     }
   },
   methods:{
     handleLetterChange(letter){
       this.letter = letter;
+    },
+    getLocationData(){
+      axios.get("/api/city.json").then(this.getCityDataSucc);
+    },
+    getCityDataSucc(res){
+      res = res.data;
+      // console.log(res)
+      if(res.data){
+        const data = res.data;
+        this.cities = data.cities;
+        this.hotCities = data.hotCities;
+        this.alphabetList = data.alphabetList;
+      }
     }
+  },
+  mounted(){
+    this.getLocationData();
   }
  }
 </script>
