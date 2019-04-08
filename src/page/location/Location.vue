@@ -1,6 +1,8 @@
 <template>
   <div>
-  	<location-header></location-header>
+    <div class="load" v-if="loading">loading...</div>
+  	<location-header :cities="cities"> 
+    </location-header>
   	<location-list 
       :letter="letter"
       :cities="cities"
@@ -32,7 +34,8 @@ export default {
       letter:'',
       cities:{},
       hotCities:[],
-      alphabetList:[]
+      alphabetList:[],
+      loading:true
     }
   },
   methods:{
@@ -47,6 +50,7 @@ export default {
       // console.log(res)
       if(res.data){
         const data = res.data;
+        this.loading = false;
         this.cities = data.cities;
         this.hotCities = data.hotCities;
         this.alphabetList = data.alphabetList;
@@ -60,5 +64,15 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
+.load
+  position:absolute
+  top:7rem
+  left:3.5rem
+  z-index:1011
+  width:1.8rem
+  height:.5rem
+  opacity:.3
+  background:#000
+  color:#fff
+  text-align:center
 </style>
