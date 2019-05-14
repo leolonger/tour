@@ -1,6 +1,6 @@
 # tour
 
-> A Vue.js project
+>Make a tour moblie webapp using vue.js, This is my first project of vue.js 
 
 ## Build Setup
 
